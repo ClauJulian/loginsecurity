@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.claujulian.security.entidades.Usuario;
 import com.claujulian.security.enumeraciones.Rol;
@@ -37,7 +36,6 @@ public class UsuarioServicio implements UserDetailsService {
     public void registrar(String nombre, String email, String password, String password2) throws MiException {
 
         validar(nombre, email, password, password2);
-
         Usuario usuario = new Usuario();
 
         usuario.setNombre(nombre);
@@ -53,13 +51,11 @@ public class UsuarioServicio implements UserDetailsService {
     public void actualizar(UUID idUsuario, String nombre, String email, String password,
             String password2) throws MiException {
         validar(nombre, email, password, password2);
-
         Optional<Usuario> respuesta = usuarioRepositorio.findById(idUsuario);
         if (respuesta.isPresent()) {
             Usuario usuario = respuesta.get();
             usuario.setNombre(nombre);
             usuario.setEmail(email);
-
             usuario.setPassword(new BCryptPasswordEncoder().encode(password));
 
             usuarioRepositorio.save(usuario);
@@ -96,7 +92,7 @@ public class UsuarioServicio implements UserDetailsService {
             session.setAttribute("usuariosession", usuario);
             return new User(usuario.getEmail(), usuario.getPassword(), permisos);
         } else {
-            return null;
+            throw new UsernameNotFoundException("Usuario no encontrado");
         }
 
     }

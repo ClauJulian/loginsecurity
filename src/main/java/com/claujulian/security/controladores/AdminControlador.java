@@ -29,7 +29,7 @@ public class AdminControlador {
         return "panel.html";
     }
 
-     @GetMapping("/usuarios")
+    @GetMapping("/usuarios")
     public String listar(ModelMap modelo){
         List<Usuario> usuarios = usuarioServicio.listarUsuarios();
         modelo.addAttribute("usuarios", usuarios);
@@ -45,8 +45,7 @@ public class AdminControlador {
     @GetMapping("/usuario/{id}")
     public String modificarUsuario(@PathVariable UUID id, ModelMap modelo){ 
         Usuario usuario = usuarioServicio.getOne(id);
-        modelo.addAttribute("usuario", usuario);
-        
+        modelo.addAttribute("usuario", usuario);  
         return "usuario_modificar.html";
     }
 
