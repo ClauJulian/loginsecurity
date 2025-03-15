@@ -30,7 +30,7 @@ El sistema implementa seguridad con **Spring Security**, utilizando **FilterChai
    git clone <URL_DEL_REPOSITORIO>
    ```
 2. **Configurar la base de datos:**
-   - Crear una base de datos llamada `gestor_usuarios` en MySQL.
+   - Crear una base de datos llamada `security` en MySQL.
    - Ajustar las credenciales en `application.properties`.
 3. **Compilar y ejecutar el proyecto:**
    ```bash
