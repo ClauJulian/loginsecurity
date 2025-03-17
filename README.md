@@ -27,7 +27,7 @@ El sistema implementa seguridad con **Spring Security**, utilizando **FilterChai
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/ClauJulian/loginsecurity.git
    ```
 2. **Configurar la base de datos:**
    - Crear una base de datos llamada `security` en MySQL.
@@ -38,6 +38,8 @@ El sistema implementa seguridad con **Spring Security**, utilizando **FilterChai
    mvn spring-boot:run
    ```
 4. **Acceder a la aplicación:**
+   Registra usuarios y desde la Base de Datos asigna el Rol de ADMIN a quién esté encargado de la Gestión de usuarios.
+   - General: `http://localhost:8080/`
    - Usuario: `http://localhost:8080/`
    - Administrador: `http://localhost:8080/admin`
 
