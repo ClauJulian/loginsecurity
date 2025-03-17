@@ -15,19 +15,19 @@
                             <input type="hidden" th:value="${id}" name="id">
     
                             <div class="form-group mb-3">
-                                <input type="text" class="form-control" name="nombre" th:value="${usuario.nombre}" placeholder="Nombre">
+                                <input type="text" class="form-control" name="nombre" th:value="${usuario.nombre}" placeholder="Nombre" required>
                             </div>
     
                             <div class="form-group mb-3">
-                                <input type="email" class="form-control" name="email" th:value="${usuario.email}" placeholder="Email">
+                                <input type="email" class="form-control" name="email" th:value="${usuario.email}" placeholder="Email" required>
                             </div>
     
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                                <input type="password" class="form-control" name="password" placeholder="Contraseña" required> 
                             </div>
     
                             <div class="form-group mb-3">
-                                <input type="password" class="form-control" name="password2" placeholder="Repetir Contraseña">
+                                <input type="password" class="form-control" name="password2" placeholder="Repetir Contraseña" required>
                             </div>
     
                             <div class="d-grid gap-2">
